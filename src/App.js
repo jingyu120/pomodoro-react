@@ -1,20 +1,21 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Nav from "./Nav";
-import Todo from "./Todo";
+import Navigation from "./Navigation";
+import Todo from "./pages/Todo";
+import Timer from "./pages/Timer";
+import About from "./pages/About";
+import { Routes, Route } from "react-router-dom";
 
-function Footer(props) {
-  return (
-    <footer>
-      <p>Copyright {props.year}</p>
-    </footer>
-  );
-}
 function App() {
   return (
     <>
-      <Nav />
-      <Todo />
-      <Footer year={new Date().getFullYear()} />
+      <div className="container">
+        <Navigation />
+        <Routes>
+          <Route path="/todo" element={<Todo />} />
+          <Route path="/timer" element={<Timer />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </div>
     </>
   );
 }
