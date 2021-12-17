@@ -1,7 +1,7 @@
 .todo-item-container {
-  background: #fff;
+  background: rgb(49, 65, 88);
   border-radius: 8px;
-  margin-top: 8px;
+  margin-top: 15px;
   padding: 16px;
   position: relative;
   box-shadow: 0 4px 8px grey;

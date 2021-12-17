@@ -18,7 +18,7 @@ const NewTodoForm = ({ todos, onCretatePressed }) => {
         className="new-todo-button"
         onClick={() => {
           const isDuplicate = todos.some((todo) => todo.text === inputValue);
-          if (!isDuplicate) {
+          if (!isDuplicate && inputValue.trim() !== "") {
             onCretatePressed(inputValue);
             setInputValue("");
           }
