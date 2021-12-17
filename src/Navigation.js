@@ -6,7 +6,7 @@ export default function Navigation() {
         <Nav.Link href="/todo">Todo</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/timer">Timer</Nav.Link>
+        <Nav.Link href="/">Timer</Nav.Link>
       </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/about">About</Nav.Link>
