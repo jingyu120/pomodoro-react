@@ -4,11 +4,12 @@ import Timer from "./Timer/Timer";
 import About from "./pages/About";
 import TodoList from "./Todos/TodoList";
 import { Routes, Route } from "react-router-dom";
+import "./App.css";
 
 function App() {
   return (
     <>
-      <div className="container">
+      <div className="app">
         <Navigation />
         <Routes>
           <Route path="/todo" element={<TodoList />} />

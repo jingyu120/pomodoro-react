@@ -3,14 +3,20 @@ import React, { useState, useEffect } from "react";
 
 export default function Timer() {
   const [seconds, setSeconds] = useState(1500);
-  const [isActive, setIsActive] = useState(false);
+  const [breakTime, setBreakTime] = useState(300);
+  const [isFocus, setIsFocus] = useState(false);
 
   const toggle = () => {
-    setIsActive(!isActive);
+    setIsFocus(!isFocus);
   };
+  const reset = () => {
+    setIsFocus(false);
+    setSeconds(1500);
+  };
+
   useEffect(() => {
     let interval = null;
-    if (isActive) {
+    if (isFocus) {
       interval = setInterval(() => {
         if (seconds === 0) {
           toggle();
@@ -22,15 +28,24 @@ export default function Timer() {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [isActive, seconds]);
+  }, [isFocus, seconds]);
 
   return (
-    <div className="timer-container">
-      <div className="clock">
-        {("0" + Math.floor(seconds / 60)).slice(-2)}:
-        {("0" + (seconds % 60)).slice(-2)}
+    <>
+      <div className="timer-container">
+        <div className="clock">
+          {("0" + Math.floor(seconds / 60)).slice(-2)}:
+          {("0" + (seconds % 60)).slice(-2)}
+        </div>
       </div>
-      <button onClick={toggle}>Start</button>
-    </div>
+      <div className="button-container">
+        <button className="start-button" onClick={toggle}>
+          {isFocus ? "Pause" : "Start"}
+        </button>
+        <button className="reset-button" onClick={reset}>
+          Reset
+        </button>
+      </div>
+    </>
   );
 }
