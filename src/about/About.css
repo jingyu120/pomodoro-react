@@ -1,0 +1,11 @@
+.todo-container,
+.timer-container {
+  padding: 10%;
+  padding-bottom: 5%;
+}
+
+.timer-container h1,
+.todo-container h1 {
+  margin-bottom: 20px;
+  color: pink;
+}

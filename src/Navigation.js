@@ -5,15 +5,15 @@ export default function Navigation() {
   return (
     <div className="nav-container">
       <ul>
+      <li>
+        <Link to="/">About</Link>
+      </li>
         <li>
           <Link to="/todo">Todo</Link>
         </li>
         <li>
           {" "}
-          <Link to="/"> Timer</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
+          <Link to="/timer"> Pomodoro</Link>
         </li>
       </ul>
     </div>
